@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #faf8f5;
+  --color-foreground: #1a1a1a;
+  --color-orange-glow: #f97316;
+  --color-orange-light: #ffedd5;
+  --color-cream: #faf8f5;
+  --color-mint: #e6f4f1;
+  --color-mint-dark: #0f766e;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Premium Custom Animations */
+
+@keyframes float-tilt {
+  0% {
+    transform: translateY(0px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+}
+
+.animate-float-tilt {
+  animation: float-tilt 6s ease-in-out infinite;
+}
+
+@keyframes tracking-expand {
+  0% {
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    letter-spacing: 0.2em;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-tracking-expand {
+  animation: tracking-expand 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
