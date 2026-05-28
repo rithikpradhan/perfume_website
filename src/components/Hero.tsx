@@ -108,7 +108,7 @@ export default function Hero() {
 
       {/* 1. BACKGROUND: Large Brand Outline Text (Centered, stacked vertically behind the bottle) */}
       <div className="absolute inset-x-0 inset-y-0 max-w-7xl  mx-auto px-6 md:px-12 flex items-center justify-center pointer-events-none select-none z-10 overflow-hidden">
-        <div className={`flex flex-col items-center justify-center text-center font-heading font-black uppercase text-[22vw] md:text-[14vw] lg:text-[12vw] xl:text-[160px] leading-[0.85] -translate-y-12 lg:-translate-y-20 transition-all duration-[800ms] ease-out ${
+        <div className={`flex flex-col items-center justify-center text-center font-heading font-black uppercase text-[14vw] md:text-[14vw] lg:text-[12vw] xl:text-[160px] leading-[1.1] md:leading-[0.85] gap-8 md:gap-0 -translate-y-12 lg:-translate-y-20 transition-all duration-[800ms] ease-out ${
           animate 
             ? "opacity-100 scale-100 tracking-[0.1em]" 
             : "opacity-0 scale-95 tracking-normal"
