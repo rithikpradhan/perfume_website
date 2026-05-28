@@ -75,9 +75,16 @@ export default function Hero() {
   return (
     <section className={`relative min-h-screen w-full flex items-center justify-center overflow-hidden transition-all duration-[1200ms] ${slide.bgGradient}`}>
       
+      {/* Background Ambient Glows */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0">
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75vw] h-[75vw] md:w-[50vw] md:h-[50vw] rounded-full blur-[90px] md:blur-[140px] opacity-[0.22] md:opacity-[0.28] transition-all duration-[1200ms] ${
+          slide.id === "velour" ? "bg-[#d4af37]" : "bg-[#2dd4bf]"
+        }`} />
+      </div>
+
       {/* Left side reviews badge (Visible on all screens with responsive absolute layout) */}
       <div 
-        className={`flex absolute left-4 md:left-8 xl:left-14 top-24 md:top-34 items-center gap-2.5 md:gap-3 bg-white/40 backdrop-blur-md border border-white/20 rounded-full py-1.5 px-3 md:py-2 md:px-4 shadow-sm select-none transition-all duration-[800ms] cubic-bezier(0.16, 1, 0.3, 1) ${
+        className={`flex absolute left-4 md:left-8 xl:left-14 top-[12vh] md:top-34 items-center gap-2.5 md:gap-3 bg-white/40 backdrop-blur-md border border-white/20 rounded-full py-1.5 px-3 md:py-2 md:px-4 shadow-sm select-none transition-all duration-[800ms] cubic-bezier(0.16, 1, 0.3, 1) z-30 ${
           animate ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
         }`}
       >
@@ -101,7 +108,7 @@ export default function Hero() {
 
       {/* 1. BACKGROUND: Large Brand Outline Text (Centered, stacked vertically behind the bottle) */}
       <div className="absolute inset-x-0 inset-y-0 max-w-7xl  mx-auto px-6 md:px-12 flex items-center justify-center pointer-events-none select-none z-10 overflow-hidden">
-        <div className={`flex flex-col items-center justify-center text-center font-heading font-black uppercase text-[18vw] md:text-[14vw] lg:text-[12vw] xl:text-[160px] leading-[0.85] -translate-y-10 lg:-translate-y-20 transition-all duration-[800ms] ease-out ${
+        <div className={`flex flex-col items-center justify-center text-center font-heading font-black uppercase text-[22vw] md:text-[14vw] lg:text-[12vw] xl:text-[160px] leading-[0.85] -translate-y-12 lg:-translate-y-20 transition-all duration-[800ms] ease-out ${
           animate 
             ? "opacity-100 scale-100 tracking-[0.1em]" 
             : "opacity-0 scale-95 tracking-normal"
@@ -122,8 +129,8 @@ export default function Hero() {
       </div>
 
       {/* 2. MIDDLEGROUND: Centered Isolated Perfume Bottle with Zoom and Tilt animations (z-index 20) */}
-      <div className="relative z-20 flex items-center justify-center w-full max-w-[540px] md:max-w-[620px] aspect-square flex-shrink-0 translate-y-10 lg:translate-y-16">
-        <div className="relative w-[85%] h-[85%] md:w-[90%] md:h-[90%]">
+      <div className="relative z-20 flex items-center justify-center w-full max-w-[540px] md:max-w-[620px] aspect-square flex-shrink-0 translate-y-4 md:translate-y-10 lg:translate-y-16">
+        <div className="relative w-[92%] h-[92%] md:w-[90%] md:h-[90%]">
           <Image
             src={slide.image}
             alt={slide.outlineText}
@@ -141,7 +148,7 @@ export default function Hero() {
 
       {/* Right side details card (Visible on all screens with responsive sizing and layout) */}
       <div 
-        className={`flex absolute right-4 md:right-8 xl:right-16 bottom-8 md:bottom-24 flex-col gap-2 md:gap-3 lg:gap-4 bg-white/40 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-3 lg:p-4 shadow-sm w-[130px] md:w-[170px] lg:w-[280px] select-none transition-all duration-[800ms] cubic-bezier(0.16, 1, 0.3, 1) ${
+        className={`flex absolute right-4 md:right-8 xl:right-16 bottom-[10vh] md:bottom-24 flex-col gap-2 md:gap-3 lg:gap-4 bg-white/40 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-3 lg:p-4 shadow-sm w-[130px] md:w-[170px] lg:w-[280px] select-none transition-all duration-[800ms] cubic-bezier(0.16, 1, 0.3, 1) z-30 ${
           animate ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
         }`}
       >
