@@ -306,20 +306,20 @@ export default function ProductsSection() {
             </div>
 
             {/* Mobile-only Layout (Matches user reference design) */}
-            <div className="lg:hidden flex flex-col items-center justify-between w-full relative flex-grow min-h-[350px] gap-6 mt-4">
+            <div className="lg:hidden flex flex-col items-center justify-between w-full relative flex-grow min-h-[430px] gap-6 mt-4">
               
               {/* Active Product Ambient Glow */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                <div className={`w-[220px] h-[220px] rounded-full blur-[70px] opacity-40 transition-all duration-700 ${
+                <div className={`w-[280px] h-[280px] rounded-full blur-[75px] opacity-40 transition-all duration-700 ${
                   activeProduct.bgGlow
                 }`} />
               </div>
 
               {/* Dashed background dial centered behind bottle */}
-              <div className="absolute w-[240px] h-[240px] rounded-full border border-dashed border-[#1a1a1a]/15 animate-[spin_80s_linear_infinite] pointer-events-none z-0" />
+              <div className="absolute w-[320px] h-[320px] rounded-full border border-dashed border-[#1a1a1a]/15 animate-[spin_80s_linear_infinite] pointer-events-none z-0" />
 
               {/* Active Bottle Container */}
-              <div className="relative w-[180px] h-[220px] z-10 transition-all duration-700 ease-out flex items-center justify-center">
+              <div className="relative w-[250px] h-[300px] z-10 transition-all duration-700 ease-out flex items-center justify-center">
                 {products.map((product, idx) => {
                   const isActive = idx === activeIndex;
                   return (
@@ -329,14 +329,14 @@ export default function ProductsSection() {
                         isActive ? "opacity-100 scale-100 rotate-[2deg] translate-y-0" : "opacity-0 scale-75 rotate-[-5deg] translate-y-4 pointer-events-none"
                       }`}
                     >
-                      <div className="relative w-full h-[200px]">
+                      <div className="relative w-full h-[280px]">
                         <Image
                           src={product.image}
                           alt={product.name}
                           fill
                           priority
                           className="object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.1)]"
-                          sizes="180px"
+                          sizes="250px"
                         />
                       </div>
                       {/* Shadow */}
