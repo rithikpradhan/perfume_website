@@ -131,14 +131,14 @@ export default function ProductsSection() {
         <div className="w-full max-w-[1900px] mx-auto flex flex-col h-[calc(100vh-120px)] lg:h-auto gap-6 md:gap-8 xl:gap-10 z-10 px-6 md:px-12 xl:px-24 2xl:px-30">
           
           {/* Top Heading */}
-          <div className="flex flex-col gap-1.5">
-            <h2 className="font-heading font-light text-3xl md:text-4xl lg:text-5xl xl:text-6.5xl 2xl:text-7xl text-[#1a1a1a] leading-none">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1.5">
+            <h2 className="font-heading font-light text-4xl md:text-4xl lg:text-5xl xl:text-6.5xl 2xl:text-7xl text-[#1a1a1a] leading-none">
               Explore all <br className="md:hidden" />
               <span className="font-semibold text-emerald-800 transition-colors duration-500">
                 our products
               </span>
             </h2>
-            <p className="text-[10px] md:text-xs xl:text-sm text-[#1a1a1a]/50 font-sans tracking-widest uppercase mt-1">
+            <p className="text-[11px] md:text-xs xl:text-sm text-[#1a1a1a]/50 font-sans tracking-widest uppercase mt-1">
               Sensory luxury that cares for you
             </p>
           </div>
@@ -310,16 +310,16 @@ export default function ProductsSection() {
               
               {/* Active Product Ambient Glow */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                <div className={`w-[280px] h-[280px] rounded-full blur-[75px] opacity-40 transition-all duration-700 ${
+                <div className={`w-[320px] h-[320px] rounded-full blur-[80px] opacity-40 transition-all duration-700 ${
                   activeProduct.bgGlow
                 }`} />
               </div>
 
               {/* Dashed background dial centered behind bottle */}
-              <div className="absolute w-[320px] h-[320px] rounded-full border border-dashed border-[#1a1a1a]/15 animate-[spin_80s_linear_infinite] pointer-events-none z-0" />
+              <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-[#1a1a1a]/15 animate-[spin_80s_linear_infinite] pointer-events-none z-0" />
 
               {/* Active Bottle Container */}
-              <div className="relative w-[250px] h-[300px] z-10 transition-all duration-700 ease-out flex items-center justify-center">
+              <div className="relative w-[280px] h-[330px] z-10 transition-all duration-700 ease-out flex items-center justify-center">
                 {products.map((product, idx) => {
                   const isActive = idx === activeIndex;
                   return (
@@ -329,14 +329,14 @@ export default function ProductsSection() {
                         isActive ? "opacity-100 scale-100 rotate-[2deg] translate-y-0" : "opacity-0 scale-75 rotate-[-5deg] translate-y-4 pointer-events-none"
                       }`}
                     >
-                      <div className="relative w-full h-[280px]">
+                      <div className="relative w-full h-[310px]">
                         <Image
                           src={product.image}
                           alt={product.name}
                           fill
                           priority
                           className="object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.1)]"
-                          sizes="250px"
+                          sizes="280px"
                         />
                       </div>
                       {/* Shadow */}
