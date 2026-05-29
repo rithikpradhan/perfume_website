@@ -62,6 +62,7 @@ export default function ProductsSection() {
   // Monitor scroll position of the sticky parent wrapper
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 1024) return; // Only track scroll progress on desktop
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const totalHeight = rect.height - window.innerHeight;
@@ -94,6 +95,10 @@ export default function ProductsSection() {
 
   // Smooth scroll to corresponding container section progress when clicked
   const handleProductClick = (idx: number) => {
+    if (window.innerWidth < 1024) {
+      setActiveIndex(idx);
+      return;
+    }
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const startScrollY = window.scrollY + rect.top;
@@ -116,11 +121,11 @@ export default function ProductsSection() {
   const activeProduct = products[activeIndex];
 
   return (
-    /* Parent scroll tracks h-[200vh] to scroll-drive active indices */
-    <div ref={containerRef} className="relative w-full h-[200vh]">
+    /* Parent scroll tracks h-[200vh] to scroll-drive active indices (Desktop only) */
+    <div ref={containerRef} className="relative w-full h-auto lg:h-[200vh]">
       
-      {/* Sticky layout viewport h-screen / 100vh */}
-      <div className="sticky top-0 w-full h-screen flex flex-col justify-start bg-[#faf8f5] overflow-hidden pt-20 md:pt-24 lg:pt-28 xl:pt-32 pb-8">
+      {/* Sticky layout viewport h-screen / 100vh on desktop, h-auto on mobile */}
+      <div className="relative lg:sticky lg:top-0 w-full h-auto lg:h-screen flex flex-col justify-start bg-[#faf8f5] overflow-hidden pt-12 pb-12 lg:pt-28 lg:pb-8">
         
         {/* Decorative Rotating Dial in Background */}
         <div className="absolute right-0 md:right-[5%] xl:right-[10%] top-1/2 -translate-y-1/2 w-[70vw] h-[70vw] md:w-[500px] md:h-[500px] xl:w-[650px] xl:h-[650px] 2xl:w-[800px] 2xl:h-[800px] pointer-events-none select-none opacity-20">
